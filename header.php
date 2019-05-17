@@ -22,36 +22,38 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="site">
+<div id="page" class="site clear">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'bellaworks' ); ?></a>
 
-	<header id="masthead" class="site-header" role="banner">
+	<header id="masthead" class="site-header clear" role="banner">
 		<div class="wrapper">
-			
-			<?php if( get_custom_logo() ) { ?>
-				<?php if ( is_home() ) { ?>
-					<h1 class="logo">
-		            	<?php the_custom_logo(); ?>
-		            </h1>
-				<?php } else { ?>
-					<div class="logo">
-		            	<?php the_custom_logo(); ?>
+			<div class="left">
+				<?php if( get_custom_logo() ) { ?>
+					<?php if ( is_home() ) { ?>
+						<h1 class="logo">
+			            	<?php the_custom_logo(); ?>
+			            </h1>
+					<?php } else { ?>
+						<div class="logo">
+			            	<?php the_custom_logo(); ?>
+			            </div>
+					<?php } ?>
+		        <?php } else { ?>
+		            <div class="logo">
+			            <a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a>
 		            </div>
-				<?php } ?>
-	            
-	        <?php } else { ?>
-	            <h1 class="logo">
-		            <a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a>
-	            </h1>
-	        <?php } ?>
+		        <?php } ?>
+	        </div>
 
-
-
-			<nav id="site-navigation" class="main-navigation" role="navigation">
-				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'MENU', 'bellaworks' ); ?></button>
-				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-			</nav><!-- #site-navigation -->
-	</div><!-- wrapper -->
+	        <div class="right">
+				<nav id="site-navigation" class="main-navigation" role="navigation">
+					<span id="toggleMenu" class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><span><i aria-label="Menu"></i></span></span>
+					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu','container_class'=>'main-menu-wrapper','link_before'=>'<span>','link_after'=>'</span>' ) ); ?>
+				</nav><!-- #site-navigation -->
+			</div>
+		</div><!-- wrapper -->
 	</header><!-- #masthead -->
 
-	<div id="content" class="site-content wrapper">
+	<?php get_template_part('template-parts/banner','home'); ?>
+
+	<div id="content" class="site-content wrapper clear">

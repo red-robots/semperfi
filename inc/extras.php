@@ -392,7 +392,7 @@ function format_phone_number($string) {
     if (strpos($string, '+') !== false) {
         $append = '+';
     }
-    $string = preg_replace("/[^0-9]/", "", "705-666-8888" );
+    $string = preg_replace("/[^0-9]/", "", $string);
     $string = preg_replace('/\s+/', '', $string);
     return $append.$string;
 }
@@ -406,4 +406,10 @@ function get_instagram_setup() {
         $option = '';
     }
     return $option;
+}
+
+function get_homepage_id() {
+    global $wpdb;
+    $result = $wpdb->get_row( "SELECT * FROM $wpdb->posts WHERE post_status = 'private' AND post_name='homepage'" );
+    return ($result) ? $result->ID : 0;
 }

@@ -1,17 +1,22 @@
 <?php 
 /* Custom Post Types */
-
 //DASH ICONS = https://developer.wordpress.org/resource/dashicons/
 add_action('init', 'js_custom_init', 1);
 function js_custom_init() {
     $post_types = array(
         array(
-            'post_type' => 'events',
-            'menu_name' => 'Events',
-            'plural'    => 'Events',
-            'single'    => 'Event',
-            'menu_icon' => 'dashicons-star-filled',
-            'supports'  => array('title','editor','thumbnail')
+            'post_type' => 'service',
+            'menu_name' => 'Services',
+            'plural'    => 'Services',
+            'single'    => 'Service',
+            'supports'  => array('title','editor')
+        ),
+        array(
+            'post_type' => 'career',
+            'menu_name' => 'Careers',
+            'plural'    => 'Careers',
+            'single'    => 'Career',
+            'supports'  => array('title','editor')
         ),
     );
     
