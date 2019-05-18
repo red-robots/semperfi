@@ -6,28 +6,21 @@
  */
 
 jQuery(document).ready(function ($) {
-	
-	/*
-	*
-	*	Current Page Active
-	*
-	------------------------------------*/
-	$("[href]").each(function() {
-    if (this.href == window.location.href) {
-        $(this).addClass("active");
-        }
-	});
-	/*
-        FAQ dropdowns
-	__________________________________________
-	*/
-	$('.question').click(function() {
-	 
-	    $(this).next('.answer').slideToggle(500);
-	    $(this).toggleClass('close');
-	    $(this).find('.plus-minus-toggle').toggleClass('collapsed');
-	    $(this).parent().toggleClass('active');
-	 
+
+	$(".js-select,.address_state select").select2({
+		placeholder: "Select...",
+	    allowClear: true
+	}).on("select2:unselecting", function(e) {
+	    $(this).data('state', 'unselected');
+	    $('input.allow-reset').val("");
+	}).on("select2:open", function(e) {
+	    if ($(this).data('state') === 'unselected') {
+	        $(this).removeData('state'); 
+	        var self = $(this);
+	        setTimeout(function() {
+	            self.select2('close');
+	        }, 1);
+	    }    
 	});
 
 	/*

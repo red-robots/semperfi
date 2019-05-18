@@ -61,10 +61,10 @@
 		position: relative;
 	}
 	.menu > li {
-		text-align: center;
+		text-align: left;
 		@media screen and (min-width: $tabwidth) {
 			float: left;
-			text-align: left;
+			text-align: center;
 		}
 	}
 	.menu > li > a {
@@ -119,6 +119,70 @@
 		color: #000;
 		@media screen and (min-width: $tabwidth) {
 			color: #000;
+		}
+	}
+	.menu ul {
+		padding-left: 20px;
+    	padding-bottom: 8px;
+		@media screen and (min-width: $tabwidth) {
+			display: inline-block;
+			opacity: 0;
+			visibility: hidden;
+			height: 0;
+			max-height: 0;
+			position: absolute;
+			width: 200px;
+			background: $color-red;
+			padding-left: 0;
+    		padding-bottom: 0;
+    		overflow: hidden;
+    		margin-top: -9px;
+    		left: 48%;
+  			transform: translateX(-48%);
+  			text-align: center;
+			@include transition(all ease-out .3s);
+		}
+		li {
+			@media screen and (min-width: $tabwidth) {
+				display: block;
+			}
+		}
+		a {
+			color: #FFF;
+			border-top: none;
+			padding: 2px 0;
+			@media screen and (min-width: $tabwidth) {
+				display: block;
+				padding: 5px 12px 4px;
+				border-top: 1px dotted rgba(255,255,255,.65);
+			}
+			&:hover {
+				color: #FFF;
+				opacity: 0.5;
+			}
+		}
+	}
+	.menu li:hover > ul {
+		@media screen and (min-width: $tabwidth) {
+			opacity: 1;
+			visibility: visible;
+			overflow: visible;
+			height: auto;
+			max-height: 500px;
+			margin-top: -5px;
+		}
+	}
+	.menu ul ul {
+		@media screen and (min-width: $tabwidth) {
+			background: transparent;
+			transform: none;
+			left: 200px;
+			margin-top: 0!important;
+			top: 1px;
+			li {
+				background: $color-red;
+				margin-left: 2px;
+			}
 		}
 	}
 }

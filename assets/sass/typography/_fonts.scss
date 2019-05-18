@@ -8,6 +8,14 @@
 
 @font-face {
   font-family: 'Overpass';
+  src: url("fonts/overpass-light.eot");
+  src: url("fonts/overpass-light.eot?#iefix") format("eot"), url("fonts/overpass-light.woff") format("woff"), url("fonts/overpass-light.woff2") format("woff2"), url("fonts/overpass-light.ttf") format("truetype"), url("fonts/overpass-light.svg#webfontzRhIMntw") format("svg");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Overpass';
   src: url("fonts/overpass-bold.eot");
   src: url("fonts/overpass-bold.eot?#iefix") format("eot"), url("fonts/overpass-bold.woff") format("woff"), url("fonts/overpass-bold.woff2") format("woff2"), url("fonts/overpass-bold.ttf") format("truetype"), url("fonts/overpass-bold.svg#webfontzRhIMntw") format("svg");
   font-weight: bold;

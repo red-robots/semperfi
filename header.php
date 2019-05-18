@@ -54,6 +54,10 @@
 		</div><!-- wrapper -->
 	</header><!-- #masthead -->
 
-	<?php get_template_part('template-parts/banner','home'); ?>
+	<?php 
+		if ( is_home() || is_front_page() ) {
+			get_template_part('template-parts/banner','home'); 
+		}
+	?>
 
 	<div id="content" class="site-content wrapper clear">
