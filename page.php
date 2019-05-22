@@ -12,18 +12,18 @@
  * @package bellaworks
  */
 
-get_header(); ?>
+get_header(); 
+$banner = get_field('banner_image');
+$content_class = ($banner) ? 'has-banner':'default-temp';
+?>
 
-	<div id="primary" class="full-content-area default-temp">
+	<div id="primary" class="full-content-area <?php echo $content_class?>">
 		<main id="main" class="site-main clear" role="main">
-
 			<?php
 			while ( have_posts() ) : the_post();
 				get_template_part( 'template-parts/content', 'page' );
-
 			endwhile; // End of the loop.
 			?>
-
 		</main><!-- #main -->
 	</div><!-- #primary -->
 

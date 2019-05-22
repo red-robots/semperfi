@@ -7,18 +7,19 @@
  * @package bellaworks
  */
 
+$banner = get_field('banner_image');
 ?>
-
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<?php if (!$banner) { ?>
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-	</header><!-- .entry-header -->
+	</header>
+	<?php } ?>
 
 	<?php if ( get_the_content() ) { ?>
 	<div class="entry-content">
 		<?php
 			the_content();
-
 			wp_link_pages( array(
 				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'bellaworks' ),
 				'after'  => '</div>',
