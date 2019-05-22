@@ -21,6 +21,7 @@ h2 {
 }
 .hero {
 	position: relative;
+	background-color: $color-teal;
 	border-bottom: 15px solid $color-teal;
 	height: 300px;
 	@media screen and (min-width: $tabwidth) {
@@ -199,40 +200,6 @@ body.home .site-content.wrapper {
 		color: $color-red;
 		padding-left: 20px;
 	}
-	.services-map {
-		position: relative;
-		img {
-			width: 100%;
-			height: auto;
-		}
-		.legend {
-			width: 100%;
-			font-size: 13px;
-			position: relative;
-			@media screen and (min-width: $tabwidth) {
-				position: absolute;
-				bottom: 0;
-				right: 0;
-				margin-bottom: 2.5%;
-				width: 60%;
-				font-size: 12px;
-			}
-			i {
-				display: inline-block;
-				width: 16px;
-				height: 16px;
-				position: relative;
-				top: 4px;
-				margin-right: 8px;
-				&.dark-teal {
-					background: $color-dark-teal;
-				}
-				&.red {
-					background: $color-red;
-				}
-			}
-		}
-	}
 	.statisctics {
 		max-width: 900px;
 		width: 100%;
@@ -300,146 +267,203 @@ body.home .site-content.wrapper {
 	}
 	.row2 .stitle {
 		margin-bottom: 25px;
-	}
-	.row3 {
-		position: relative;
-		.wrap {
-			width: 100%;
-			position: relative;
-			min-height: 280px;
-		}
-		.col {
-			width: 100%;
-			height: 200px;
-			overflow: hidden;
-			@media screen and (min-width: $tabwidth) {
-				width: 50%;
-				height: 100%;
-			}
-		}
-		.imagediv {
-			background-size: cover;
-			background-repeat: no-repeat;
-			background-position: center;
-			@media screen and (min-width: $tabwidth) {
-				width: 50%;
-				height: 100%;
-				position: absolute;
-				top: 0;
-			}
-		}
-		.top .imagediv {
-			@media screen and (min-width: $tabwidth) {
-				left: 0;
-			}
-		}
-		
-		.quotetext {
-			background: $color-teal;
-			@include flexbox();
-			@include flexbox-wrap(wrap);
-			@include flexbox-direction(row);
-			@include flexbox-justify(center);
-			@include flexbox-align-items(center);
-			@media screen and (min-width: $tabwidth) {
-				height: 100%;
-				position: absolute;
-				top: 0;
-				right: 0;
-			}
-			.ctabtn {
-				display: inline-block;
-				text-decoration: none;
-				font-family: $font-heading;
-				font-size: 20px;
-				color: #FFF;
-				border: 1px solid #FFF;
-				padding: 12px 30px;
-				position: relative;
-				overflow: hidden;
-				span {
-					position: relative;
-					z-index: 5;
-				}
-				&:after {
-					content: '';
-					position: absolute;
-					z-index: -1;
-					@include transition(all .3s);
-					width: 0;
-					height: 103%;
-					top: 50%;
-					left: 50%;
-					background: #fff;
-					opacity: 0;
-					-webkit-transform: translateX(-50%) translateY(-50%);
-					-moz-transform: translateX(-50%) translateY(-50%);
-					-ms-transform: translateX(-50%) translateY(-50%);
-					transform: translateX(-50%) translateY(-50%);
-				}
-				&:hover {
-					color: $color-teal;
-				}
-				&:hover:after {
-					width: 102%;
-					opacity: 1;
-					z-index: 2;
-				}
-			}
-		}
-		.bottom .imagediv {
-			@media screen and (min-width: $tabwidth) {
-				right: 0;
-			}
-		}
-		.descwrap {
-			background: $color-red;
-			color: #FFF;
-			height: auto;
-			@include flexbox();
-			@include flexbox-wrap(wrap);
-			@include flexbox-direction(row);
-			@include flexbox-justify(center);
-			@include flexbox-align-items(center);
-			@media screen and (min-width: $tabwidth) {
-				position: absolute;
-				top: 0;
-				left: 0;
-				height: 100%;
-			}
-			.textwrap {
-				padding: 10%;
-				@media screen and (min-width: $tabwidth) {
-					padding: 0 10%;
-				}
-			}
-			.stitle {
-				color: #FFF;
-			}
-			.desc {
-				font-size: 14px;
-			}
-			.button {
-				margin-top: 20px;
-			}
-			.button a {
-				display: inline-block;
-				text-decoration: none;
-				text-transform: uppercase;
-				padding: 5px 10px;
-				font-size: 13px;
-				font-weight: bold;
-				line-height: 1.3;
-				background: #FFF;
-				color: $color-red;
-				&:hover {
-					color: #FFF;
-					background: $color-dark-teal;
-				}
-			}
-		}
 	}	
 }
+
+.services-map {
+	position: relative;
+	img {
+		width: 100%;
+		height: auto;
+	}
+	.legend {
+		width: 100%;
+		font-size: 13px;
+		position: relative;
+		@media screen and (min-width: $tabwidth) {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			margin-bottom: 2.5%;
+			width: 60%;
+			font-size: 12px;
+		}
+		i {
+			display: inline-block;
+			width: 16px;
+			height: 16px;
+			position: relative;
+			top: 4px;
+			margin-right: 8px;
+			&.dark-teal {
+				background: $color-dark-teal;
+			}
+			&.red {
+				background: $color-red;
+			}
+		}
+	}
+}
+
+.bottompageinfo {
+	position: relative;
+	.wrap {
+		width: 100%;
+		position: relative;
+		min-height: 280px;
+	}
+	.col {
+		width: 100%;
+		height: 200px;
+		overflow: hidden;
+		@media screen and (min-width: $tabwidth) {
+			width: 50%;
+			height: 100%;
+		}
+	}
+	.imagediv {
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		@media screen and (min-width: $tabwidth) {
+			width: 50%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+		}
+	}
+	.top .imagediv {
+		@media screen and (min-width: $tabwidth) {
+			left: 0;
+		}
+	}
+	
+	.quotetext {
+		background: $color-teal;
+		@include flexbox();
+		@include flexbox-wrap(wrap);
+		@include flexbox-direction(row);
+		@include flexbox-justify(center);
+		@include flexbox-align-items(center);
+		@media screen and (min-width: $tabwidth) {
+			height: 100%;
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+		.ctabtn {
+			display: inline-block;
+			text-decoration: none;
+			font-family: $font-heading;
+			font-size: 20px;
+			color: #FFF;
+			border: 1px solid #FFF;
+			padding: 12px 30px;
+			position: relative;
+			overflow: hidden;
+			span {
+				position: relative;
+				z-index: 5;
+			}
+			&:after {
+				content: '';
+				position: absolute;
+				z-index: -1;
+				@include transition(all .3s);
+				width: 0;
+				height: 103%;
+				top: 50%;
+				left: 50%;
+				background: #fff;
+				opacity: 0;
+				-webkit-transform: translateX(-50%) translateY(-50%);
+				-moz-transform: translateX(-50%) translateY(-50%);
+				-ms-transform: translateX(-50%) translateY(-50%);
+				transform: translateX(-50%) translateY(-50%);
+			}
+			&:hover {
+				color: $color-teal;
+			}
+			&:hover:after {
+				width: 102%;
+				opacity: 1;
+				z-index: 2;
+			}
+		}
+	}
+	.bottom .imagediv {
+		@media screen and (min-width: $tabwidth) {
+			right: 0;
+		}
+	}
+	.descwrap {
+		background: $color-red;
+		color: #FFF;
+		height: auto;
+		@include flexbox();
+		@include flexbox-wrap(wrap);
+		@include flexbox-direction(row);
+		@include flexbox-justify(center);
+		@include flexbox-align-items(center);
+		@media screen and (min-width: $tabwidth) {
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+		}
+		.textwrap {
+			padding: 10%;
+			@media screen and (min-width: $tabwidth) {
+				padding: 0 10%;
+			}
+		}
+		.stitle {
+			color: #FFF;
+		}
+		.desc {
+			font-size: 14px;
+		}
+		.button {
+			margin-top: 20px;
+		}
+		.button a {
+			display: inline-block;
+			text-decoration: none;
+			text-transform: uppercase;
+			padding: 5px 10px;
+			font-size: 13px;
+			font-weight: bold;
+			line-height: 1.3;
+			background: #FFF;
+			color: $color-red;
+			&:hover {
+				color: #FFF;
+				background: $color-dark-teal;
+			}
+		}
+	}
+}
+
+.entry-content.has-feat-image {
+	.col-left {
+		width: 100%;
+		margin-bottom: 30px;
+		@media screen and (min-width: $midwidth) {
+			width: 48%;
+			float: left;
+			margin-bottom: 0;
+		}
+	}
+	
+	.col-right {
+		width: 100%;
+		@media screen and (min-width: $midwidth) {
+			width: 48%;
+			float: right;
+		}
+	}
+}
+
 .page-link-list {
 	ul {
 		margin: 0 0;
@@ -535,6 +559,13 @@ body.home .site-content.wrapper {
 			height: 35px!important;
 			line-height: 35px!important;
 		}
+	}
+}
+body.page-template-page-about {
+	#content.wrapper {
+		max-width: 100%;
+		width: 100%;
+		padding: 0 0;
 	}
 }
 
