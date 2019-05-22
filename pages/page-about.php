@@ -8,9 +8,8 @@ get_header();
 $banner = get_field('banner_image');
 $content_class = ($banner) ? 'has-banner':'default-temp';
 
-$home_page_id = get_homepage_id();
-$services_map = get_field('services_map',$home_page_id); 
-$map_legend = get_field('map_legend',$home_page_id); 
+$services_map = get_field('map_image'); 
+$map_legend = get_field('map_legend'); 
 
 ?>
 
